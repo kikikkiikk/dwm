@@ -69,6 +69,8 @@ static const char *rofi[] = { "rofi", "-show", "drun", NULL};
 static const char *termcmd[]  = { "st", NULL };
 static const char *flameshot[] = {"flameshot","gui",NULL};
 static const char *chrome[] = {"google-chrome-stable",NULL};
+static const char *volumeup[] = {"amixer","set","Master","6550+",NULL};
+static const char *volumedown[] = {"amixer","set","Master","6550-",NULL}
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = rofi } },
@@ -96,6 +98,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	{ MODKEY|ControlMask,           XK_a,      spawn,          {.v = flameshot } },
 	{ MODKEY,			XK_e,      spawn,	   {.v = chrome } },
+	{ MODKEY,			XK_F10,	   spawn,          {.v = volumedown}},
+	{ MODKEY,			XK_F11,	   spawn,	   {.v = volumeup}},
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
