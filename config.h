@@ -15,7 +15,8 @@ static const char col_cyan[]        = "#005577";
 static const char col_nordfg[] = "#727EA9";
 static const char col_nordbg[] = "#D8DEE9";
 static const char col_nordborder[] = "#727EA9";
-
+static const unsigned int baralpha = 0xd0;
+static const unsigned int borderalpha = OPAQUE;
 static const char col_nordfgSel[] = "#434C5E";
 static const char col_nordbgSel[] = "#88C0D0";
 static const char col_nordborderSel[] = "#88C0C0";
@@ -23,6 +24,10 @@ static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_nordfg, col_nordbg, col_nordborder },
 	[SchemeSel]  = { col_nordfgSel, col_nordbgSel,  col_nordborderSel  },
+};
+static const unsigned int alphas[][3] = {
+	[SchemeNorm] = { OPAQUE, baralpha, borderalpha },
+	[SchemeSel]  = { OPAQUE, baralpha, borderalpha },
 };
 
 /* tagging */
@@ -70,7 +75,7 @@ static const char *termcmd[]  = { "st", NULL };
 static const char *flameshot[] = {"flameshot","gui",NULL};
 static const char *chrome[] = {"google-chrome-stable",NULL};
 static const char *volumeup[] = {"amixer","set","Master","6550+",NULL};
-static const char *volumedown[] = {"amixer","set","Master","6550-",NULL}
+static const char *volumedown[] = {"amixer","set","Master","6550-",NULL};
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = rofi } },
