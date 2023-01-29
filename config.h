@@ -105,11 +105,11 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-	{ MODKEY|ControlMask,           XK_a,      spawn,          {.v = flameshot } },
+	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = flameshot } },
 	{ MODKEY,			XK_e,      spawn,	   {.v = chrome } },
 	{ MODKEY,			XK_F10,	   spawn,          {.v = volumedown}},
 	{ MODKEY,			XK_F11,	   spawn,	   {.v = volumeup}},
-	{ MODKEY|ShiftMask,		XK_b,	   spawn,	   {.v = cwall}},
+	{ MODKEY|ShiftMask,		XK_b,      spawn,	   {.v = cwall } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
