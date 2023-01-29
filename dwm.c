@@ -1747,7 +1747,11 @@ tile(Monitor *m)
 				my += HEIGHT(c);
 		} else {
 			h = (m->wh - ty) / (n - i);
-			resize(c, m->wx + mw, m->wy + ty, m->ww - mw - (2*c->bw), h - (2*c->bw), 0);
+			//resize(c, m->wx + mw, m->wy + ty, m->ww - mw - (2*c->bw), h - (2*c->bw), 0);
+			resize(c, m->wx + mw + gappx, m->wy + ty + gappx, m->ww - mw - (2*c->bw) - 2 * gappx, h - (2*c->bw) - 2 * gappx, 0);
+			if(n > 1){
+				resize(c, m->wx + mw, m->wy + ty, m->ww - mw - (2*c->bw), h - (2*c->bw), 0);
+			}
 			if (ty + HEIGHT(c) < m->wh)
 				ty += HEIGHT(c);
 		}
