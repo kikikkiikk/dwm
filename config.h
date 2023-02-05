@@ -37,6 +37,9 @@ static const unsigned int alphas[][3] = {
 /* tagging */
 static const char *tags[] = { "", "", "", "", "", "", "" , "", ""};
 
+static const char *overviewtag = "OVERVIEW";
+static const Layout overviewlayout = {"O", overview };
+
 static const Rule rules[] = {
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class
@@ -58,6 +61,7 @@ static const Layout layouts[] = {
 	{ "平铺",      tile },    /* first entry is default */
 	{ "浮动",      NULL },    /* no layout function means floating behavior */
 	{ "单窗口",      monocle },
+	{ "ooo",	grid },
 };
 
 /* key definitions */
@@ -102,6 +106,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
+	{ MODKEY,                       XK_g,      setlayout,      {.v = &layouts[3]} },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
