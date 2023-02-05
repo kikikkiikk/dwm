@@ -8,7 +8,8 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int vertpad 	    = 10;       /* vertical padding of bar */
 static const int sidepad 	    = 10;       /* horizontal padding of bar */
-static const char *fonts[]          = { "Sauce Code Pro Nerd Font:size=12" };
+static const int traywidth	    = 125;
+static const char *fonts[]          = { "Sauce Code Pro Nerd Font:size=12", "WenQuanYi Micro Hei Regular:size=10" };
 static const char dmenufont[]       = "monospace:size=10";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
@@ -77,13 +78,17 @@ static const char *rofi[] = { "rofi", "-show", "drun", NULL};
 static const char *termcmd[]  = { "st", NULL };
 static const char *flameshot[] = {"flameshot","gui",NULL};
 static const char *chrome[] = {"google-chrome-stable",NULL};
-static const char *volumeup[] = {"amixer","set","Master","6550+",NULL};
-static const char *volumedown[] = {"amixer","set","Master","6550-",NULL};
+static const char *volumeup[] = {"vol-up",NULL};
+static const char *volumedown[] = {"vol-down",NULL};
 static const char *cwall[] = {"feh","--bg-fill","--no-fehbg","--randomize","~/.feh/*",NULL};
+static const char *trayer[] = {"tray",NULL};
+static const char *notifc[] = {"notifc",NULL};
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = rofi } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY|ShiftMask,             XK_t,	   spawn,          {.v = trayer } },
+	{ MODKEY,	 		XK_n,      spawn,	   {.v = notifc } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
